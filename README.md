@@ -7,7 +7,6 @@ As per statement 5, Z2 is the subclass of Y, X and Object
 36.1.2
 
 import java.util.Scanner;
-
 class Person {
     String name;
     int age;
@@ -23,7 +22,6 @@ class Person {
         System.out.println("Age: " + age);
     }
 }
-
 class Student extends Person {
     int rollNumber;
     @Override
@@ -39,7 +37,6 @@ class Student extends Person {
         System.out.println("Roll Number: " + rollNumber);
     }
 }
-
 public class InheritanceExample{
     public static void main(String[] args) {
         Student student = new Student();
@@ -57,14 +54,12 @@ class A {
       return aValue;
     }
 }
-
 class B extends A {
     public int bValue;
     public int getBValue() {
         return bValue;
     }
 }
-
 public class InheritanceExample2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -94,14 +89,12 @@ public class InheritanceExample2 {
 class Marks {
     int id;
     float javaMarks, cMarks, cppMarks;
-
     public void setMarks(int id, float javaMarks, float cMarks, float cppMarks) {
         this.id = id;
         this.javaMarks = javaMarks;
         this.cMarks = cMarks;
         this.cppMarks = cppMarks;
     }
-
     public void displayMarks() {
         System.out.println("Id : " + id);
         System.out.println("Java marks : " + javaMarks);
@@ -109,15 +102,12 @@ class Marks {
         System.out.println("Cpp marks : " + cppMarks);
     }
 }
-
 class Result extends Marks {
     float total, avg;
-
     public void compute() {
         total = javaMarks + cMarks + cppMarks;
         avg = total / 3;
     }
-
     public void showResult() {
         System.out.println("Total : " + total);
         System.out.println("Avg : " + avg);
@@ -130,12 +120,10 @@ public class SingleInheritanceDemo {
             System.out.println("Please provide four arguments: id, javaMarks, cMarks, cppMarks");
             return;
         }
-
         int id = Integer.parseInt(args[0]);
         float javaMarks = Float.parseFloat(args[1]);
         float cMarks = Float.parseFloat(args[2]);
         float cppMarks = Float.parseFloat(args[3]);
-
         Result result = new Result();
         result.setMarks(id, javaMarks, cMarks, cppMarks);
         result.displayMarks();
@@ -152,42 +140,34 @@ public class SingleInheritanceDemo {
 class Student {
     int id;
     String name;
-
     public void setData(int id, String name) {
         this.id = id;
         this.name = name;
     }
-
     public void displayData() {
         System.out.println("Id : " + id);
         System.out.println("Name : " + name);
     }
 }
-
 class Marks extends Student {
     float javaMarks, cMarks, cppMarks;
-
     public void setMarks(float javaMarks, float cMarks, float cppMarks) {
         this.javaMarks = javaMarks;
         this.cMarks = cMarks;
         this.cppMarks = cppMarks;
     }
-
     public void displayMarks() {
         System.out.println("Java marks : " + javaMarks);
         System.out.println("C marks : " + cMarks);
         System.out.println("Cpp marks : " + cppMarks);
     }
 }
-
 class Result extends Marks {
     float total, avg;
-
     public void compute() {
         total = javaMarks + cMarks + cppMarks;
         avg = total / 3;
     }
-
     public void showResult() {
         System.out.println("Total : " + total);
         System.out.println("Avg : " + avg);
@@ -200,13 +180,11 @@ public class MultilevelInheritanceDemo {
             System.out.println("Please provide five arguments: id, name, javaMarks, cMarks, cppMarks");
             return;
         }
-
         int id = Integer.parseInt(args[0]);
         String name = args[1];
         float javaMarks = Float.parseFloat(args[2]);
         float cMarks = Float.parseFloat(args[3]);
         float cppMarks = Float.parseFloat(args[4]);
-
         Result result = new Result();
         result.setData(id, name);
         result.setMarks(javaMarks, cMarks, cppMarks);
@@ -217,7 +195,6 @@ public class MultilevelInheritanceDemo {
     }
 }
 
-
 Test After 36
 
 Addition and Multiplication using Inheritance
@@ -227,12 +204,10 @@ import java.util.Scanner;
 
 class Calculation {
     public int num1, num2;
-
     public Calculation(int num1, int num2) {
         this.num1 = num1;
         this.num2 = num2;
     }
-
     public int addition() {
         return num1 + num2;
     }
@@ -242,7 +217,6 @@ class My_Calculation extends Calculation {
     public My_Calculation(int num1, int num2) {
         super(num1, num2);
     }
-
     public int multiplication() {
         return num1 * num2;
     }
@@ -253,11 +227,9 @@ public class MainCalculation {
         Scanner scanner = new Scanner(System.in);
         int num1 = scanner.nextInt();
         int num2 = scanner.nextInt();
-
         My_Calculation myCalculation = new My_Calculation(num1, num2);
         int additionResult = myCalculation.addition();
         int multiplicationResult = myCalculation.multiplication();
-
         System.out.println(additionResult);
         System.out.println(multiplicationResult);
     }
@@ -277,13 +249,11 @@ import java.util.Scanner;
 class Account {
     String accountNumber;
     double balance;
-
     public void inputDetails() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter account number: ");
         accountNumber = scanner.nextLine();
     }
-
     public void displayBalance() {
         System.out.println("Current balance: " + balance);
     }
@@ -291,13 +261,11 @@ class Account {
 
 class Transaction extends Account {
     double amount;
-
     public void inputAmount() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter transaction amount: ");
         amount = scanner.nextDouble();
     }
-
     public void performTransaction() {
         balance += amount;
         System.out.println("Transaction Successful!");
@@ -331,27 +299,22 @@ import java.util.Scanner;
 
 class Person {
     String name;
-
     public void inputName() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter name: ");
         name = scanner.nextLine();
     }
-
     public void displayName() {
         System.out.println("Name: " + name);
     }
 }
-
 class Citizen extends Person {
     int age;
-
     public void inputAge() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter age: ");
         age = scanner.nextInt();
     }
-
     public void displayAge() {
         System.out.println("Age: " + age);
     }
@@ -382,7 +345,6 @@ import java.util.Scanner;
 class Temperature {
     float celsius;
     float fahrenheit;
-
     public void inputTemperature() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter temperature in Celsius: ");
@@ -471,29 +433,24 @@ public class Addition {
 
 public class Box{
 	double width , height , depth;
-	
 	Box(){
 		width = -1;
 		height = -1;
 		depth = -1;
 	}
-	
 	Box(double L){
 		width = L;
 		height = L;
 		depth = L;
 	}
-	
 	Box(double w ,double h , double d){
 		width = w;
 		height = h;
 		depth = d;
 	}
-	
 	public double volume(){
 		return width*height*depth;
 	}
-	
 	public static void main(String...args){
 		double a,b,c;
 		if(args.length==0){
@@ -506,7 +463,6 @@ public class Box{
 			System.out.println("Volume of Box("+a+") is : "+obj.volume());
 		} 
 		else if(args.length==3){
-			
 			a = Double.parseDouble(args[0]);
 			b = Double.parseDouble(args[1]);
 			c = Double.parseDouble(args[2]);
@@ -558,7 +514,6 @@ import java.util.Scanner;
 class RectangleIn {
     int length;
     int width;
-
     public void inputDimensions() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("length: ");
@@ -592,8 +547,6 @@ public class Main {
 Test after 37
 
 Car Info
-
-
 import java.util.Scanner;
 
 class Vehicle {
@@ -609,7 +562,6 @@ class CarInfo extends Vehicle {
         System.out.print("Enter car model: ");
         model = scanner.nextLine();
     }
-
     public void displayCarInfo() {
         System.out.println("Car Make: " + make);
         System.out.println("Car Model: " + model);
@@ -647,7 +599,6 @@ class Employee {
 
 class EmployeeInfo extends Employee {
     double salaryPerYear;
-
     public void inputEmployeeDetails() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter employee name: ");
@@ -659,13 +610,11 @@ class EmployeeInfo extends Employee {
         System.out.print("Enter salary per year: $");
         salaryPerYear = scanner.nextDouble();
     }
-
     public void displayEmployeeInfo() {
         System.out.println("Employee Name: " + employeeName);
         System.out.println("Designation: " + designation);
         System.out.println("Years of Experience: " + yearsOfExperience + " years");
     }
-
     public void calculateSalary() {
         double salary = yearsOfExperience * salaryPerYear;
         System.out.println("Salary: $" + salary);
@@ -683,8 +632,6 @@ public class Main {
 
 
 
-
-
 Test after 37
 
 
@@ -698,20 +645,17 @@ import java.util.Scanner;
 
 class CircleIn {
     double radius;
-
     public void inputRadius() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("radius: ");
         radius = scanner.nextDouble();
     }
 }
-
 class CircumferenceAndAreaOut extends CircleIn {
     public void calculateCircumference() {
         double circumference = 2 * Math.PI * radius;
         System.out.println("Circumference: " + circumference);
     }
-
     public void calculateArea() {
         double area = Math.PI * radius * radius;
         System.out.println("Area: " + area);
@@ -736,7 +680,6 @@ import java.util.Scanner;
 
 class A {
     public int aValue;
-
     public int getAValue() {
         return aValue;
     }
@@ -744,11 +687,9 @@ class A {
 
 class B extends A {
     public int bValue;
-
     public int getBValue() {
         return bValue;
     }
-
     public int getAValue() {
         return 2 * super.getAValue(); // overriding method to access superclass method implementation
     }
@@ -758,13 +699,10 @@ public class OverridingExample{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         B b = new B();
-
         System.out.print("Enter the value for A: ");
         b.aValue = scanner.nextInt();
-
         System.out.print("Enter the value for B: ");
         b.bValue = scanner.nextInt();
-
         System.out.println("b.getAValue(): " + b.getAValue());
         System.out.println("b.getBValue(): " + b.getBValue());
     }
@@ -805,7 +743,6 @@ class Bank {
 
 class SBI extends Bank {
     public static final float INTEREST_RATE = 10.8f;
-
     @Override
     public float calculateInterest(float principal, int time) {
         return (principal * INTEREST_RATE * time) / 100;
@@ -814,7 +751,6 @@ class SBI extends Bank {
 
 class ICICI extends Bank {
     public static final float INTEREST_RATE = 11.6f;
-
     @Override
     public float calculateInterest(float principal, int time) {
         return (principal * INTEREST_RATE * time) / 100;
@@ -823,7 +759,6 @@ class ICICI extends Bank {
 
 class AXIS extends Bank {
     public static final float INTEREST_RATE = 12.3f;
-
     @Override
     public float calculateInterest(float principal, int time) {
         return (principal * INTEREST_RATE * time) / 100;
@@ -834,11 +769,9 @@ public class TestOverriding{
     public static void main(String[] args) {
         float principal = Float.parseFloat(args[0]);
         int time = Integer.parseInt(args[1]);
-
         SBI sbi = new SBI();
         ICICI icici = new ICICI();
         AXIS axis = new AXIS();
-
         System.out.println("SBI rate of interest = " + sbi.calculateInterest(principal, time));
         System.out.println("ICICI rate of interest = " + icici.calculateInterest(principal, time));
         System.out.println("AXIS rate of interest = " + axis.calculateInterest(principal, time));
@@ -856,30 +789,25 @@ package q11272;
 
 class SuperClass {
     int num;
-
     public SuperClass(int value) {
         num = value;
         System.out.println("SuperClass number = " + 10);
     }
-
     public void printHello() {
         System.out.println("Hello from SuperClass");
     }
 }
-
 class SubClass extends SuperClass {
     public SubClass(int value) {
         super(value + 5);
         System.out.println("SubClass number = " + num);
     }
-
     @Override
     public void printHello() {
         super.printHello();
         System.out.println("Hello from SubClass");
     }
 }
-
 public class SuperKeyword {
     public static void main(String[] args) {
         SubClass obj = new SubClass(10);
@@ -900,7 +828,6 @@ class Animal {
     public Animal() {
         System.out.println("Animal is created");
     }
-
     public void eat() {
         System.out.println("Eating something");
     }
@@ -911,23 +838,19 @@ class Dog extends Animal {
         super();
         System.out.println("Dog is created");
     }
-
     @Override
     public void eat() {
         System.out.println("Eating bread");
     }
-
     public void bark() {
         System.out.println("Barking");
     }
-
     public void work() {
         super.eat();
         eat();
         bark();
     }
 }
-
 public class ExampleOnSuper {
     public static void main(String[] args) {
         Dog dog = new Dog();
@@ -949,29 +872,24 @@ public class ExampleOnSuper {
 class SuperClass {
     int value1;
     int value2;
-
     public SuperClass(int value1, int value2) {
         this.value1 = value1;
         this.value2 = value2;
     }
-
     public void show() {
         System.out.println("This is super class show() method");
         System.out.println("value1 = " + value1);
         System.out.println("value2 from super class = " + value2);
     }
 }
-
 class SubClass extends SuperClass {
     int value3;
     int value4;
-
     public SubClass(int value1, int value2, int value3, int value4) {
         super(value1, value2);
         this.value3 = value3;
         this.value4 = value4;
     }
-
     public void show() {
         System.out.println("This is sub class show() method");
         super.show();
@@ -979,14 +897,12 @@ class SubClass extends SuperClass {
         System.out.println("value4 = " + value4);
     }
 }
-
 public class AccessUsingSuper {
     public static void main(String[] args) {
         int value1 = Integer.parseInt(args[0]);
         int value2 = Integer.parseInt(args[1]);
         int value3 = Integer.parseInt(args[2]);
         int value4 = Integer.parseInt(args[3]);
-
         SubClass obj = new SubClass(value1, value2, value3, value4);
         obj.show();
     }
@@ -1057,11 +973,9 @@ No. It is not allowed
 
 class A {
     private int value;
-
     public A(int value) {
         this.value = value;
     }
-
     @Override
     public String toString() {
         return "The value is: " + value;
@@ -1081,11 +995,9 @@ class A {
 
 class A {
     private int value;
-
     public A(int value) {
         this.value = value;
     }
-
     @Override
     public boolean equals(Object otherObject) {
         if (this == otherObject) {
@@ -1100,38 +1012,31 @@ class A {
 }
 class B {
     private int value;
-
     public B(int value) {
         this.value = value;
     }
-
     // No need to override equals() method for class B in this example
 }
 
 class EqualsExample{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("a1: ");
         A a1 = new A(scanner.nextInt());
         System.out.print("a2: ");
         A a2 = new A(scanner.nextInt());
         System.out.print("a3: ");
         A a3 = new A(scanner.nextInt());
-
         System.out.println("a1.equals(a2) : " + a1.equals(a2));
         System.out.println("a1.equals(a3) : " + a1.equals(a3));
-
         System.out.print("b1: ");
         B b1 = new B(scanner.nextInt());
         System.out.print("b2: ");
         B b2 = new B(scanner.nextInt());
         System.out.print("b3: ");
         B b3 = new B(scanner.nextInt());
-
         System.out.println("b1.equals(b2) : " + b1.equals(b2));
         System.out.println("b1.equals(b3) : " + b1.equals(b3));
-
         scanner.close();
     }
 }
@@ -1160,18 +1065,15 @@ import java.util.Scanner
 class CustomObject {
     private String attribute1;
     private int attribute2;
-
     public CustomObject(String attribute1, int attribute2) {
         this.attribute1 = attribute1;
         this.attribute2 = attribute2;
     }
-
     @Override
     public String toString() {
         return "CustomObject{attribute1='" + attribute1 + "', attribute2=" + attribute2 + "}";
     }
 }
-
 
 
 
@@ -1188,18 +1090,15 @@ public class Car {
     private String make;
     private String model;
     private boolean autonomousMode;
-
     public Car(String make, String model) {
         this.make = make;
         this.model = model;
         this.autonomousMode = false;
     }
-
     public void startAutonomous() {
         autonomousMode = true;
         System.out.println("Autonomous mode activated. Enjoy your ride in the " + make + " " + model + "!");
     }
-
     public void stopAutonomous() {
         autonomousMode = false;
         System.out.println("Autonomous mode deactivated. Your " + make + " " + model + " is now under manual control.");
@@ -1242,38 +1141,29 @@ interface Shape {
 
 class Circle implements Shape {
     private double radius;
-
     public Circle(double radius) {
         this.radius = radius;
     }
-
     @Override
     public double calculateArea() {
         return Math.PI * radius * radius;
     }
-
     @Override
     public double calculatePerimeter() {
         return 2 * Math.PI * radius;
     }
 }
-
 public class AreaCalc {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Radius: ");
         double radius = scanner.nextDouble();
-
         Circle circle = new Circle(radius);
-
         System.out.printf("Area: %.2f%n", circle.calculateArea());
         System.out.printf("Perimeter: %.2f%n", circle.calculatePerimeter());
-
         scanner.close();
     }
 }
-
 
 
 
@@ -1312,17 +1202,13 @@ class MusicPlayer {
 public class PlayerMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         MP3Player mp3Player = new MP3Player();
         WAVPlayer wavPlayer = new WAVPlayer();
         MusicPlayer musicPlayer = new MusicPlayer();
-
         System.out.println("Choose an audio format:");
         System.out.println("1. MP3");
         System.out.println("2. WAV");
-
         int choice = scanner.nextInt();
-
         switch (choice) {
             case 1:
                 musicPlayer.playAudio(mp3Player);
@@ -1333,7 +1219,6 @@ public class PlayerMain {
             default:
                 System.out.println("Invalid choice");
         }
-
         scanner.close();
     }
 }
@@ -1347,10 +1232,8 @@ Test after 43
 
 Numerical sorting application
 
-
 import java.util.Scanner;
 import java.util.Arrays;
-
 interface NumberSorter {
     void sort(int[] numbers);
 }
@@ -1382,24 +1265,18 @@ class DescendingSorter implements NumberSorter {
 public class SortArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Size of the array: ");
         int size = scanner.nextInt();
-
         int[] numbers = new int[size];
-
         System.out.println("Elements of the array:");
         for (int i = 0; i < size; i++) {
             System.out.print("Element " + (i + 1) + ": ");
             numbers[i] = scanner.nextInt();
         }
-
         NumberSorter ascendingSorter = new AscendingSorter();
         ascendingSorter.sort(numbers);
-
         NumberSorter descendingSorter = new DescendingSorter();
         descendingSorter.sort(numbers);
-
         scanner.close();
     }
 }
@@ -1421,15 +1298,11 @@ interface Printable {
 class Document implements Printable {
     public void print() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter the first value: ");
         int firstValue = scanner.nextInt();
-
         System.out.print("Enter the second value: ");
         int secondValue = scanner.nextInt();
-
         System.out.println("You entered: " + firstValue + " and " + secondValue);
-
         scanner.close();
     }
 }
@@ -1459,11 +1332,9 @@ public class Main {
 interface Car {
     String getName();
     int getMaxSpeed();
-    
     default void applyBreak() {
         System.out.println("Applying break on " + getName());
     }
-    
     static Car getFastestCar(Car car1, Car car2) {
         return car1.getMaxSpeed() >= car2.getMaxSpeed() ? car1 : car2;
     }
@@ -1472,16 +1343,13 @@ interface Car {
 class BMW implements Car {
     private String name;
     private int maxSpeed;
-    
     public BMW(String name, int maxSpeed) {
         this.name = name;
         this.maxSpeed = maxSpeed;
     }
-    
     public String getName() {
         return name;
     }
-    
     public int getMaxSpeed() {
         return maxSpeed;
     }
@@ -1490,16 +1358,13 @@ class BMW implements Car {
 class Audi implements Car {
     private String name;
     private int maxSpeed;
-    
     public Audi(String name, int maxSpeed) {
         this.name = name;
         this.maxSpeed = maxSpeed;
     }
-    
     public String getName() {
         return name;
     }
-    
     public int getMaxSpeed() {
         return maxSpeed;
     }
@@ -1512,15 +1377,12 @@ public class MainApp {
             System.out.println("Invalid number of arguments.");
             return;
         }
-        
         String bmwName = args[0];
         int bmwMaxSpeed = Integer.parseInt(args[1]);
         String audiName = args[2];
         int audiMaxSpeed = Integer.parseInt(args[3]);
-        
         Car bmw = new BMW(bmwName, bmwMaxSpeed);
         Car audi = new Audi(audiName, audiMaxSpeed);
-        
         Car fastestCar = Car.getFastestCar(bmw, audi);
         System.out.println("Fastest car is : " + fastestCar.getName());
     }
@@ -1611,7 +1473,6 @@ class SimplePasswordChecker implements PasswordChecker {
         System.out.print("Length: ");
         return length;
     }
-
     @Override
     public String checkComplexity(String password) {
         int length = password.length();
@@ -1665,17 +1526,14 @@ class BasicCalculator implements Calculator {
     public double add(double a, double b) {
         return a + b;
     }
-
     @Override
     public double subtract(double a, double b) {
         return a - b;
     }
-
     @Override
     public double multiply(double a, double b) {
         return a * b;
     }
-
     @Override
     public double divide(double a, double b) {
         if (b != 0) {
@@ -1691,7 +1549,6 @@ public class Calc {
     public static void main(String[] args) {
         Calculator calculator = new BasicCalculator();
         Scanner scanner = new Scanner(System.in);
-       
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
         double result1 = calculator.add(a, b);
@@ -1728,17 +1585,14 @@ class FindArea extends CalcArea {
     double triangleArea(double b, double h) {
         return 0.5 * b * h;
     }
-
     @Override
     double rectangleArea(double l, double b) {
         return l * b;
     }
-
     @Override
     double squareArea(double s) {
         return s * s;
     }
-
     @Override
     double circleArea(double r) {
         return 3.14* r * r;
@@ -1751,7 +1605,6 @@ public class Area {
             System.out.println("Please provide two arguments.");
             return;
         }
-
         double arg1, arg2;
         try {
             arg1 = Double.parseDouble(args[0]);
@@ -1760,13 +1613,11 @@ public class Area {
             System.out.println("Invalid input. Please provide valid numeric arguments.");
             return;
         }
-
         FindArea areaFinder = new FindArea();
         double triangleArea = areaFinder.triangleArea(arg1, arg2);
         double rectangleArea = areaFinder.rectangleArea(arg1, arg2);
         double squareArea = areaFinder.squareArea(arg1);
         double circleArea = areaFinder.circleArea(arg2);
-
         System.out.println("Area of triangle : " + triangleArea);
         System.out.println("Area of rectangle : " + rectangleArea);
         System.out.println("Area of square : " + squareArea);
@@ -1820,13 +1671,10 @@ class Hexagon extends Shape {
 public class AbstractExample {
     public static void main(String[] args) {
         Shape shape;
-
         shape = new Trapezoid();
         shape.numberOfSides();
-
         shape = new Triangle();
         shape.numberOfSides();
-
         shape = new Hexagon();
         shape.numberOfSides();
     }
@@ -1847,7 +1695,6 @@ abstract class AbstractGreeting implements Greeting {
     public String getStandardMessage(String name) {
         return "Hi " + name;
     }
-    
     public abstract String getCustomMessage(String name);
 }
 
@@ -1876,7 +1723,6 @@ class BasicCoffeeMachine extends CoffeeMachine {
     public void brewCoffee(int cups) {
         System.out.println("Brewing " + cups + " cups of basic coffee");
     }
-
     @Override
     public void addWater(int cups) {
         System.out.println("Adding " + cups + " cups of water to the coffee machine");
